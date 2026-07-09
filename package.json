@@ -1,0 +1,136 @@
+{
+  "name": "mineradio",
+  "productName": "Mineradio",
+  "version": "1.5.4-kugou",
+  "description": "Mineradio：支持 LX Music 和酷狗音乐的沉浸式本地播放器。融合本地播放、跨平台搜索、歌词舞台、粒子视觉和酷狗音乐登录。",
+  "author": "Mineradio",
+  "main": "desktop/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win nsis",
+    "build:win:dir": "electron-builder --win dir",
+    "build:mac": "electron-builder --mac dmg zip --universal --publish never"
+  },
+  "build": {
+    "appId": "com.mineradio.desktop",
+    "productName": "Mineradio",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "afterPack": "build/after-pack.js",
+    "toolsets": {
+      "winCodeSign": "1.1.0"
+    },
+    "files": [
+      "desktop/**/*",
+      "public/**/*",
+      "build/**/*",
+      "!build/after-pack.js",
+      "!build/installer.nsh",
+      "!build/installerHeader.bmp",
+      "!build/installerSidebar.bmp",
+      "!build/icon.png",
+      "!node_modules/**/coverage/**/*",
+      "!node_modules/**/.nyc_output/**/*",
+      "!**/*.bak-*",
+      "!**/*.backup*",
+      "!updates/**/*",
+      "!backups/**/*",
+      "server.js",
+      "dj-analyzer.js",
+      "lx-search.js",
+      "lx-source-host.js",
+      "platform-playlist-import.js",
+      "kugou-api.js",
+      "package.json",
+      "!public/index.*.html",
+      "public/index.html"
+    ],
+    "asar": false,
+    "win": {
+      "executableName": "Mineradio",
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.music",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "artifactName": "Mineradio-${version}-mac-${arch}.${ext}"
+    },
+    "dmg": {
+      "artifactName": "Mineradio-${version}-mac-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mineradio",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "uninstallerSidebar": "build/installerSidebar.bmp",
+      "installerHeader": "build/installerHeader.bmp",
+      "include": "build/installer.nsh",
+      "artifactName": "Mineradio.Setup.${version}.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "xiteral128",
+        "repo": "Mineradio-LX-Kugou"
+      }
+    ]
+  },
+  "mineradio": {
+    "update": {
+      "provider": "github",
+      "owner": "xiteral128",
+      "repo": "Mineradio-LX-Kugou",
+      "preview": true,
+      "preferMirrors": true,
+      "mirrors": [
+        "https://gh.llkk.cc/",
+        "https://ghfast.top/",
+        "https://gh-proxy.com/",
+        "https://ghproxy.net/"
+      ]
+    }
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "mpg123-decoder": "^1.0.3",
+    "NeteaseCloudMusicApi": "^4.32.0"
+  },
+  "devDependencies": {
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "rcedit": "^5.0.2"
+  }
+}
