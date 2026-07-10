@@ -13,4 +13,8 @@ backups/
 *~
 .pnpm-debug.log*
 work/
-outputs/
+
+outputs/*
+!outputs/Mineradio.Setup.1.5.4-kugou.exe
+!outputs/Mineradio.Setup.1.5.4-kugou.exe.blockmap
+!outputs/latest.yml
