@@ -1,8 +1,8 @@
 version: 1.5.4-kugou
 files:
   - url: Mineradio.Setup.1.5.4-kugou.exe
-    sha512: HtGlfXo1Jr40nGu6VWmPVopITam83BtcI9Vy+68EABFsf3MrO4KTPEKC2YttZue/cu6AZ/tYFg0Nb7RjkgZM7w==
-    size: 118481455
+    sha512: Ve4ut9128EKfH3rSPTm5FzP3R0YB3kn0KP7yS3O1j25lysowdxpKFfPCwqKKgV112K4x3KR/ITboWKX8EWEJcA==
+    size: 118481541
 path: Mineradio.Setup.1.5.4-kugou.exe
-sha512: HtGlfXo1Jr40nGu6VWmPVopITam83BtcI9Vy+68EABFsf3MrO4KTPEKC2YttZue/cu6AZ/tYFg0Nb7RjkgZM7w==
-releaseDate: '2026-07-10T02:15:50.886Z'
+sha512: Ve4ut9128EKfH3rSPTm5FzP3R0YB3kn0KP7yS3O1j25lysowdxpKFfPCwqKKgV112K4x3KR/ITboWKX8EWEJcA==
+releaseDate: '2026-07-10T02:57:09.479Z'
