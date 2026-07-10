@@ -12,3 +12,5 @@ backups/
 *.swo
 *~
 .pnpm-debug.log*
+work/
+outputs/
